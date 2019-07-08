@@ -2,9 +2,15 @@
 class Assam < Formula
   desc "Get a credential by AssumeRoleWithSAML for AWS CLI and SDK"
   homepage ""
-  url "https://github.com/cybozu/assam/releases/download/v1.0.8/assam_1.0.8_Darwin_x86_64.tar.gz"
-  version "1.0.8"
-  sha256 "1f3d4e9f46756c5c28ef87ee3ae639ac81d62b9dd236305530beb996c5dcff9b"
+  version "1.0.9"
+
+  if OS.mac?
+    url "https://github.com/cybozu/assam/releases/download/v1.0.9/assam_1.0.9_Darwin_x86_64.tar.gz"
+    sha256 "a90a0e4a75d89c061290cc4300e2885905d00259fca15ae07dcf33194c1d13eb"
+  elsif OS.linux?
+    url "https://github.com/cybozu/assam/releases/download/v1.0.9/assam_1.0.9_Linux_x86_64.tar.gz"
+    sha256 "877e35c0c0f45c6773d71f3266021e8bde1e1cc2395b7fd758f0cfbf74e364ae"
+  end
 
   def install
     bin.install "assam"
