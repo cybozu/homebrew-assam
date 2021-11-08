@@ -5,12 +5,20 @@
 class Assam < Formula
   desc "Get a credential by AssumeRoleWithSAML for AWS CLI and SDK"
   homepage ""
-  version "1.2.4"
+  version "1.2.5"
 
   on_macos do
+    if Hardware::CPU.arm?
+      url "https://github.com/cybozu/assam/releases/download/v1.2.5/assam_1.2.5_Darwin_arm64.tar.gz"
+      sha256 "09907b885737dcccdd6d1e4943763a817ab7c2b8492befb0a0c986c9148005fe"
+
+      def install
+        bin.install "assam"
+      end
+    end
     if Hardware::CPU.intel?
-      url "https://github.com/cybozu/assam/releases/download/v1.2.4/assam_1.2.4_Darwin_x86_64.tar.gz"
-      sha256 "b1375d70782e0d23be2abfc8d4606141aaca2868cba2e00fb91b517a452339d3"
+      url "https://github.com/cybozu/assam/releases/download/v1.2.5/assam_1.2.5_Darwin_x86_64.tar.gz"
+      sha256 "0d7e5c208991f25d777ee322837b1620342bb5eb368603ce5f284f72ca135793"
 
       def install
         bin.install "assam"
@@ -20,8 +28,8 @@ class Assam < Formula
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/cybozu/assam/releases/download/v1.2.4/assam_1.2.4_Linux_x86_64.tar.gz"
-      sha256 "26c658fa5d3956a5646db4cc78d31f7d7d5be913b101e2a07526f1293db10315"
+      url "https://github.com/cybozu/assam/releases/download/v1.2.5/assam_1.2.5_Linux_x86_64.tar.gz"
+      sha256 "228b9d96f75e722b74b92c9e5f9d75198c490cd15f11055a268371adda80c86b"
 
       def install
         bin.install "assam"
