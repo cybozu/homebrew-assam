@@ -10,7 +10,7 @@ class Assam < Formula
   on_macos do
     if Hardware::CPU.intel?
       url "https://github.com/cybozu/assam/releases/download/v1.2.7/assam_1.2.7_Darwin_x86_64.tar.gz"
-      sha256 "8ff6fa585912ef48e09d1435fc723775dce1ce07065063a8e3f4d613fe6b03d8"
+      sha256 "9a4b02fe2b1868b4025601e207d29ace818b4a810f52a7c9c52b2536f231598d"
 
       def install
         bin.install "assam"
@@ -18,7 +18,7 @@ class Assam < Formula
     end
     if Hardware::CPU.arm?
       url "https://github.com/cybozu/assam/releases/download/v1.2.7/assam_1.2.7_Darwin_arm64.tar.gz"
-      sha256 "f7c0ace10bfdc99d5c018a71fb360790a859d315118cd4744ee88cb399b17422"
+      sha256 "080ce0ce5524148093b7869227ecead9b409977f034aabc45ef11aa2a6656891"
 
       def install
         bin.install "assam"
@@ -27,17 +27,17 @@ class Assam < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/cybozu/assam/releases/download/v1.2.7/assam_1.2.7_Linux_arm64.tar.gz"
-      sha256 "1476d327f4ca7d7f195258a1229a7f1abaaa16a0ababec16e1e6f6af7d42d722"
+    if Hardware::CPU.intel?
+      url "https://github.com/cybozu/assam/releases/download/v1.2.7/assam_1.2.7_Linux_x86_64.tar.gz"
+      sha256 "a89886a4eac972a5aeaa8ce681146e259ed3ad25a80adf25adeadff784bf2c5c"
 
       def install
         bin.install "assam"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/cybozu/assam/releases/download/v1.2.7/assam_1.2.7_Linux_x86_64.tar.gz"
-      sha256 "29ecd7c5163130c1f2b59ec1691efba6f000594301e08ea32f72d09054a26e9b"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/cybozu/assam/releases/download/v1.2.7/assam_1.2.7_Linux_arm64.tar.gz"
+      sha256 "b0f8bbd6382fbc683f2fcf095492b0568e7b5aaead82791225b38ee35cf511ae"
 
       def install
         bin.install "assam"
