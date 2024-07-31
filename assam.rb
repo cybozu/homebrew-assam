@@ -7,6 +7,8 @@ class Assam < Formula
   homepage ""
   version "1.2.7"
 
+  disable! date: "2025-07-31", because: :deprecated_upstream
+
   on_macos do
     if Hardware::CPU.intel?
       url "https://github.com/cybozu/assam/releases/download/v1.2.7/assam_1.2.7_Darwin_x86_64.tar.gz"
